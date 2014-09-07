@@ -261,8 +261,12 @@ void Getpoint::paintEvent(QPaintEvent *)
     QPainter painter(this);
 
     QPointF point,p1,p2;
-    QPen pointpen(Qt::black, 5);
-    QPen linepen(Qt::red,2);
+
+    QPen pointpen(Qt::black, 5,Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin);
+    QPen linepen(Qt::red,2,Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin);
+
+    painter.setRenderHint( QPainter::Antialiasing, true );
+
     painter.setPen(pointpen);
 
     QPoint transpoint = changepoint;
